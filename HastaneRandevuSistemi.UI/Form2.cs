@@ -75,7 +75,7 @@ namespace HastaneRandevuSistemi.UI
             }
             if (lstDoktorlar.SelectedItem == null)
             {
-                MesajYazdir("Lütfen silmek istediğiniz doktoru seçiniz!");
+                MesajYazdir("Lütfen güncellemek istediğiniz doktoru seçiniz!");
                 return;
             }
 
@@ -86,7 +86,7 @@ namespace HastaneRandevuSistemi.UI
             guncellenecekDoktor.Bolum = cbBolumler.SelectedItem as Bolum;
 
             int guncellenecekDoktorIndeksi = lstDoktorlar.SelectedIndex; // Güncellenecek olan doktor indeksi
-            lstDoktorlar.SelectedItems[guncellenecekDoktorIndeksi] = guncellenecekDoktor;
+            lstDoktorlar.Items[guncellenecekDoktorIndeksi] = guncellenecekDoktor;
 
             MesajYazdir("Doktor güncelleme işlemi başarıyla sonuçlandı.");
             Temizle();
@@ -95,7 +95,15 @@ namespace HastaneRandevuSistemi.UI
 
         private void btnGec_Click(object sender, EventArgs e)
         {
-            //lstDoktorlar doktorlar form3 cbDoktorlara geçirilecek.
+            Doktor[] doktorlar = new Doktor[0];
+            foreach (Doktor doktor in lstDoktorlar.Items)
+            {
+                Array.Resize(ref doktorlar, doktorlar.Length + 1);
+                doktorlar[doktorlar.Length - 1] = doktor;
+            }
+
+            Form3 form3 = new Form3(doktorlar);
+            form3.ShowDialog();
         }
     }
 }

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            dtpRandevuTarihi = new DateTimePicker();
             cbDoktorlar = new ComboBox();
+            txtSikayet = new TextBox();
             txtHastaAdSoyad = new TextBox();
+            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             btnOlustur = new Button();
             btnZRaporu = new Button();
             lstRandevular = new ListBox();
-            dtpRandevuTarihi = new DateTimePicker();
-            label4 = new Label();
-            txtSikayet = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,20 +61,44 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Hasta Bilgileri";
             // 
+            // dtpRandevuTarihi
+            // 
+            dtpRandevuTarihi.Location = new Point(146, 89);
+            dtpRandevuTarihi.Name = "dtpRandevuTarihi";
+            dtpRandevuTarihi.Size = new Size(331, 32);
+            dtpRandevuTarihi.TabIndex = 6;
+            // 
             // cbDoktorlar
             // 
             cbDoktorlar.FormattingEnabled = true;
             cbDoktorlar.Location = new Point(146, 133);
             cbDoktorlar.Name = "cbDoktorlar";
-            cbDoktorlar.Size = new Size(229, 33);
+            cbDoktorlar.Size = new Size(331, 33);
             cbDoktorlar.TabIndex = 5;
+            // 
+            // txtSikayet
+            // 
+            txtSikayet.Location = new Point(146, 175);
+            txtSikayet.Multiline = true;
+            txtSikayet.Name = "txtSikayet";
+            txtSikayet.Size = new Size(357, 95);
+            txtSikayet.TabIndex = 3;
             // 
             // txtHastaAdSoyad
             // 
             txtHastaAdSoyad.Location = new Point(147, 41);
             txtHastaAdSoyad.Name = "txtHastaAdSoyad";
-            txtHastaAdSoyad.Size = new Size(228, 32);
+            txtHastaAdSoyad.Size = new Size(330, 32);
             txtHastaAdSoyad.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(36, 178);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 25);
+            label4.TabIndex = 0;
+            label4.Text = "Şikayet :";
             // 
             // label3
             // 
@@ -113,6 +137,7 @@
             btnOlustur.TabIndex = 12;
             btnOlustur.Text = "Oluştur";
             btnOlustur.UseVisualStyleBackColor = false;
+            btnOlustur.Click += btnOlustur_Click;
             // 
             // btnZRaporu
             // 
@@ -124,6 +149,7 @@
             btnZRaporu.TabIndex = 15;
             btnZRaporu.Text = "Z Raporu";
             btnZRaporu.UseVisualStyleBackColor = false;
+            btnZRaporu.Click += btnZRaporu_Click;
             // 
             // lstRandevular
             // 
@@ -133,30 +159,6 @@
             lstRandevular.Name = "lstRandevular";
             lstRandevular.Size = new Size(687, 179);
             lstRandevular.TabIndex = 11;
-            // 
-            // dtpRandevuTarihi
-            // 
-            dtpRandevuTarihi.Location = new Point(146, 89);
-            dtpRandevuTarihi.Name = "dtpRandevuTarihi";
-            dtpRandevuTarihi.Size = new Size(225, 32);
-            dtpRandevuTarihi.TabIndex = 6;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(36, 178);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 25);
-            label4.TabIndex = 0;
-            label4.Text = "Şikayet :";
-            // 
-            // txtSikayet
-            // 
-            txtSikayet.Location = new Point(146, 175);
-            txtSikayet.Multiline = true;
-            txtSikayet.Name = "txtSikayet";
-            txtSikayet.Size = new Size(356, 95);
-            txtSikayet.TabIndex = 3;
             // 
             // Form3
             // 

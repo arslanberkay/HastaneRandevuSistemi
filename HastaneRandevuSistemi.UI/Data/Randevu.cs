@@ -10,5 +10,10 @@ namespace HastaneRandevuSistemi.UI.Data
     {
         public DateTime Tarih { get; set; }
         public Hasta Hasta { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Tarih} {Hasta.AdSoyad} : {Hasta.Sikayet}";
+        }
     }
 }
