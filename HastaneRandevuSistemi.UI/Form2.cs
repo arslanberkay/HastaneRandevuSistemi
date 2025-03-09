@@ -25,9 +25,9 @@ namespace HastaneRandevuSistemi.UI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDoktorAdSoyad.Text) || string.IsNullOrWhiteSpace(mtxtDoktorTelefonNo.Text))
+            if (string.IsNullOrWhiteSpace(txtDoktorAdSoyad.Text) || string.IsNullOrWhiteSpace(mtxtDoktorTelefonNo.Text)||cbBolumler.SelectedItem==null)
             {
-                MesajYazdir("Doktor ad soyad veya telefon numarası boş olmamalıdır!");
+                MesajYazdir("Doktor ad soyad, telefon numarası veya bölümü boş olmamalıdır!");
                 return;
             }
 
@@ -80,7 +80,7 @@ namespace HastaneRandevuSistemi.UI
             }
 
             //Güncellenecek doktor bilgileri
-            Doktor guncellenecekDoktor = new Doktor();
+            Doktor guncellenecekDoktor = lstDoktorlar.SelectedItem as Doktor; 
             guncellenecekDoktor.AdSoyad = txtDoktorAdSoyad.Text;
             guncellenecekDoktor.TelefonNumarasi = mtxtDoktorTelefonNo.Text;
             guncellenecekDoktor.Bolum = cbBolumler.SelectedItem as Bolum;

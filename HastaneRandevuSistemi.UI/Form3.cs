@@ -31,6 +31,11 @@ namespace HastaneRandevuSistemi.UI
                 MesajYazdir("Hastanın ad soyad şikayet bilgileri veya doktor bilgisi boş olmamalıdır!");
                 return;
             }
+            if (dtpRandevuTarihi.Value.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show("Geçmiş zamana randevu alınamaz!");
+                return;
+            }
 
             Hasta hasta = new Hasta();
             hasta.AdSoyad = txtHastaAdSoyad.Text;
@@ -42,7 +47,9 @@ namespace HastaneRandevuSistemi.UI
             randevu.Tarih = dtpRandevuTarihi.Value;
 
             lstRandevular.Items.Add(randevu);
+            MessageBox.Show("Randevu başarıyla oluşturuldu.");
             Temizle();
+
         }
 
         private void Temizle()
@@ -58,7 +65,11 @@ namespace HastaneRandevuSistemi.UI
 
         private void btnZRaporu_Click(object sender, EventArgs e)
         {
+            Randevu[] randevular = new Randevu[lstRandevular.Items.Count]; //lstRandevuların item sayısı kadar bir dizi oluşturdum.
+            lstRandevular.Items.CopyTo(randevular, 0); //Oluşturduğum randevular dizisinin 0 ından itibaren lstRandevuları kopyaladım.
 
+            Form4 form4 = new Form4(randevular);
+            form4.ShowDialog();
         }
     }
 }

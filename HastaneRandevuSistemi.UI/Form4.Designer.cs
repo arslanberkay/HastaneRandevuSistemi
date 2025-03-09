@@ -42,6 +42,7 @@
             dtpBaslangicTarihi.Name = "dtpBaslangicTarihi";
             dtpBaslangicTarihi.Size = new Size(337, 32);
             dtpBaslangicTarihi.TabIndex = 0;
+            dtpBaslangicTarihi.ValueChanged += dtpBaslangicTarihi_ValueChanged;
             // 
             // dtpBitisTarihi
             // 
@@ -51,6 +52,7 @@
             dtpBitisTarihi.Name = "dtpBitisTarihi";
             dtpBitisTarihi.Size = new Size(337, 32);
             dtpBitisTarihi.TabIndex = 0;
+            dtpBitisTarihi.ValueChanged += dtpBitisTarihi_ValueChanged;
             // 
             // lvZRaporu
             // 
@@ -68,6 +70,7 @@
             btnDokuman.TabIndex = 2;
             btnDokuman.Text = "Döküman";
             btnDokuman.UseVisualStyleBackColor = true;
+            btnDokuman.Click += btnDokuman_Click;
             // 
             // Form4
             // 
@@ -82,6 +85,7 @@
             Margin = new Padding(5, 4, 5, 4);
             Name = "Form4";
             Text = "Form4";
+            Load += Form4_Load;
             ResumeLayout(false);
         }
 

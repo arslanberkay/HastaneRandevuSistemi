@@ -23,7 +23,8 @@ namespace HastaneRandevuSistemi.UI
             bolum.Aciklamasi = txtBolumAciklamasi.Text;
 
             lstBolumler.Items.Add(bolum);  //Listeye eklendi.
-            MesajYazdir("Doktor ekleme iþlemi baþarýyla sonuçlandý");
+            MesajYazdir("Doktor ekleme" +
+                " iþlemi baþarýyla sonuçlandý");
             Temizle();
         }
 
